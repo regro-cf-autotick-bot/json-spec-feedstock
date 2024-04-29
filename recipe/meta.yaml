@@ -1,5 +1,5 @@
 {% set name = "json-spec" %}
-{% set version = "0.11.0" %}
+{% set version = "0.12.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: c767d6599dee08cd8fa9cce40daad42ef09e469c864acb29a04997de7f8e9d3b
+  sha256: 0a1fe48bf3e6bce39668b4bacb99e479429138d77b16ab25c482b3238d4702e0
 
 build:
   number: 0
