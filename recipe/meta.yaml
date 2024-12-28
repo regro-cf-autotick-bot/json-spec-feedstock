@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "json-spec" %}
 {% set version = "0.11.0" %}
 
@@ -7,11 +8,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: c767d6599dee08cd8fa9cce40daad42ef09e469c864acb29a04997de7f8e9d3b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - json = jsonspec.cli:main
@@ -21,9 +22,9 @@ requirements:
   host:
     - pip
     - poetry-core >=1.0.0
-    - python >=3.10,<4.0
+    - python {{ python_min }}
   run:
-    - python >=3.10,<4.0
+    - python >={{ python_min }},<4.0
     - termcolor
     - importlib-metadata >=5.0.0,<6
 
@@ -36,6 +37,7 @@ test:
     - json --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://json-spec.readthedocs.org/
